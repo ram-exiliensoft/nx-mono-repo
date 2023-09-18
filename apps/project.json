@@ -1,7 +1,7 @@
 {
   "name": "page-mono-repo-app",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "page-mono-repo-app",
+  "sourceRoot": "apps/",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,11 +9,11 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/page-mono-repo-app"
+        "outputPath": "dist/apps/"
       },
       "configurations": {
         "development": {
-          "outputPath": "page-mono-repo-app"
+          "outputPath": "apps/"
         },
         "production": {}
       }
@@ -46,7 +46,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "page-mono-repo-app/jest.config.ts",
+        "jestConfig": "apps/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -60,7 +60,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["page-mono-repo-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps//**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
